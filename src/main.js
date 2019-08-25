@@ -50,7 +50,7 @@ if (!singleInstanceLock) {
         const mainMenu = Menu.buildFromTemplate(mainMenuTemp); //Applies the main menu template
         Menu.setApplicationMenu(mainMenu); //Sets the main menu
 
-        mainWindow.on('close', function (e) { // Confirm dialog when user closes window
+        mainWindow.on('close', function(e) { // Confirm dialog when user closes window
             if (app.showExitPrompt) {
                 e.preventDefault();
                 confirmExit();
@@ -235,7 +235,7 @@ function createAboutWindow() {
             width: 500,
             height: 300,
             resizable: false,
-            frame: false
+            autoHideMenuBar: true
         });
         aboutWindow.loadURL(url.format({
             pathname: path.join(__dirname, 'windows', 'aboutWindow.html'),
@@ -257,7 +257,8 @@ function createThemeWindow() { //Creates the theme window
         themeWindow = new BrowserWindow({ //Creates new instance of themewindow if not already opened
             parent: mainWindow,
             icon: "./img/icon.png",
-            title: "Custom Theme"
+            title: "Custom Theme",
+            autoHideMenuBar: true
         });
         themeWindow.loadURL(url.format({ //loads the theme window html file
             pathname: path.join(__dirname, 'windows', 'themeWindow.html'),
@@ -279,7 +280,8 @@ function createPrefWindow() { //Creates the preferences window
         prefWindow = new BrowserWindow({ //Creates new instance of themewindow if not already opened
             parent: mainWindow,
             icon: "./img/icon.png",
-            title: "Preferences"
+            title: "Preferences",
+            autoHideMenuBar: true,
         });
         prefWindow.loadURL(url.format({ //loads the theme window html file
             pathname: path.join(__dirname, 'windows', 'prefWindow.html'),
@@ -297,12 +299,62 @@ function createPrefWindow() { //Creates the preferences window
 const mainMenuTemp = [{ //The main menu template
     label: 'File',
     submenu: [{
+        label: 'Open DevTools',
+        accelerator: 'CmdOrCtrl+Shift+I',
+        click() {
+            var window = BrowserWindow.getFocusedWindow();
+            window.webContents.openDevTools();
+        }
+    }, {
+        label: 'Force Reload',
+        accelerator: 'CmdOrCtrl+Shift+R',
+        click() {
+            var window = BrowserWindow.getFocusedWindow();
+            window.webContents.reload();
+        }
+    }, {
         label: 'Quit',
         accelerator: 'CommandOrControl+Q',
         click() {
             app.quit();
         }
     }]
+}, {
+    label: "Edit",
+    submenu: [{
+            label: "Undo",
+            accelerator: "CmdOrCtrl+Z",
+            selector: "undo:"
+        },
+        {
+            label: "Redo",
+            accelerator: "Shift+CmdOrCtrl+Z",
+            selector: "redo:"
+        },
+        {
+            type: "separator"
+        },
+        {
+            label: "Cut",
+            accelerator: "CmdOrCtrl+X",
+            selector: "cut:"
+        },
+        {
+            label: "Copy",
+            accelerator: "CmdOrCtrl+C",
+            selector: "copy:"
+        },
+        {
+            label: "Paste",
+            accelerator: "CmdOrCtrl+V",
+            selector: "paste:"
+        },
+        {
+            label: "Select All",
+            accelerator: "CmdOrCtrl+A",
+            selector: "selectAll:"
+        }
+    ]
 }, {
     label: 'View',
     submenu: [{

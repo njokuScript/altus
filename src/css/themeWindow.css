@@ -18,11 +18,12 @@ html {
 
 body {
     box-sizing: border-box;
-    background: #F6F9FA;
+    background: #1e2527;
+    color: #FFFFFF;
 }
 
 .header-wrapper {
-    background: #00BFA4;
+    background: #3f6ba5;
     color: #FFFFFF;
     padding: 30px;
     text-align: left;
@@ -56,7 +57,7 @@ body {
 }
 
 .button {
-    background: #128C7E;
+    background: #3f6ba5;
     color: #FFFFFF;
     padding: 10px 20px;
     border: 0;
@@ -65,7 +66,7 @@ body {
 }
 
 .header {
-    background: #00BFA4;
+    background: #3f6ba5;
     color: #FFFFFF;
 }
 

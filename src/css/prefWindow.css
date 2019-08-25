@@ -11,7 +11,7 @@ html {
 
 body {
     box-sizing: border-box;
-    background: #F6F9FA;
+    background: #1e2527;
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -23,7 +23,7 @@ body {
 }
 
 .header-wrapper {
-    background: #00BFA4;
+    background: #3f6ba5;
     color: #FFFFFF;
     padding: 30px;
 }
@@ -48,7 +48,8 @@ body {
 
 .preference,
 .preference-group {
-    background: #fefefe;
+    background: #293133;
+    color: #fff;
     padding: 10px 15px;
 }
 
@@ -94,7 +95,7 @@ body {
 }
 
 .preference-switch input:checked+.slider {
-    background-color: #00BFA4;
+    background-color: #4481d1;
 }
 
 .preference-switch input:checked+.slider::before {
@@ -107,8 +108,8 @@ ul.sub-preferences {
 }
 
 li.sub-preference {
-    background: #f9f9f9;
-    padding: 5px;
+    background: #2f393b;
+    padding: 10px;
     margin: 10px 0px;
     display: flex;
     justify-content: space-between;
@@ -149,7 +150,7 @@ li.sub-preference {
 }
 
 .sub-preference-switch input:checked+.slider {
-    background-color: #00BFA4;
+    background-color: #4481d1;
 }
 
 .sub-preference-switch input:checked+.slider::before {
@@ -170,7 +171,7 @@ li.sub-preference {
 .button {
     margin: 0px 10px;
     padding: 10px 30px;
-    background: #018f7c;
+    background: #3f6ba5;
     color: white;
     border: 0;
     border-radius: 4px;
@@ -181,6 +182,6 @@ li.sub-preference {
 }
 
 .button:hover {
-    background: #00BFA4;
+    background: #4481d1;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
 }

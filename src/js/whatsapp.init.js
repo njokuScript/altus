@@ -23,22 +23,8 @@ window.navigator.serviceWorker.getRegistrations().then(registrations => {
 });
 
 window.onload = () => {
-    const titleEl = document.querySelector('.window-title');
-    if (titleEl && titleEl.innerHTML.includes('Google Chrome 36+')) {
+    const titleEl = document.querySelector('.landing-title');
+    if (titleEl && titleEl.innerHTML.includes('Google Chrome 49+')) {
         window.location.reload();
     }
 }
-
-/* Mac Copy/Paste Fix */
-Mousetrap.bind(['command+c', 'ctrl+c'], function(e) {
-    document.execCommand('copy');
-});
-Mousetrap.bind(['command+v', 'ctrl+v'], function(e) {
-    document.execCommand('paste');
-});
-Mousetrap.bind(['command+x', 'ctrl+x'], function(e) {
-    document.execCommand('cut');
-});
-Mousetrap.bind(['command+a', 'ctrl+a'], function(e) {
-    document.execCommand('selectAll');
-});
